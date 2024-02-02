@@ -1,0 +1,13 @@
+
+# Ignore all files stored in junk
+junk/
+
+# Ignore all files stored in data
+data/
+
+# Ignore merge data notebook
+merge_data.ipynb
+
+# Ignore virtual environment
+.venv/
+
