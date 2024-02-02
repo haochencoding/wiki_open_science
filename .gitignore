@@ -8,6 +8,12 @@ data/block_logs/raw_csvs_block_logs_2004-2023.tar.gz
 
 # Ignore notebooks
 merge_data.ipynb
+
+# Ignore .DS_Store
+.DS_Store
+**/.DS_Store
+
+# Ignore test notebooks
 test.ipynb
 
 # Ignore virtual environment
