@@ -3,11 +3,14 @@
 junk/
 
 # Ignore all files stored in data
-data/
+data/block_logs/raw_csvs_block_logs_2004-2023/
+data/block_logs/raw_csvs_block_logs_2004-2023.tar.gz
 
-# Ignore merge data notebook
+# Ignore notebooks
 merge_data.ipynb
+test.ipynb
 
 # Ignore virtual environment
 .venv/
+
 
