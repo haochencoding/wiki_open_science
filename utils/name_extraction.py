@@ -26,7 +26,7 @@ def extract_administrator_names(dir_path, start_year, end_year):
     administrators = set()
 
     # Iterate over files returned by the file_iterator generator
-    for df in file_iterator(dir_path, start_year, end_year, extract_cols=extracted_columns):
+    for _, df in file_iterator(dir_path, start_year, end_year, extract_cols=extracted_columns):
         if df is not None:
             administrators.update(set(df['user']))
 
@@ -57,7 +57,7 @@ def extract_blocked_editor_names(dir_path, start_year, end_year):
     blocked_editors = set()
 
     # Iterate over files returned by the file_iterator generator
-    for df in file_iterator(dir_path, start_year, end_year, extract_cols=extracted_columns):
+    for _, df in file_iterator(dir_path, start_year, end_year, extract_cols=extracted_columns):
         if df is not None:
             blocked_editors.update(set(df['title']))
 

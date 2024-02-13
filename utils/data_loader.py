@@ -30,24 +30,25 @@ def file_iterator(dir_path, start_year, end_year, extract_cols):
 
     # Iterate through years and months
     for year in range(start_year, end_year+1):
-        for month in range(1, 13):
-            # Construct file path for both plain CSV and gzipped CSV
-            f_path = dir_path / str(year) / f'{year}-{month:02d}.csv'
-            f_path_gz = dir_path / str(year) / f'{year}-{month:02d}.csv.gz'
-            
-            # Check and yield CSV file
-            if f_path.exists():
-                print(f'Extracting: {f_path}')
-                yield pd.read_csv(
-                    f_path, usecols=extract_cols, on_bad_lines='warn'
-                    )
-            elif f_path_gz.exists():
-                print(f'Extracting: {f_path_gz}')
-                yield pd.read_csv(
-                    f_path_gz, usecols=extract_cols, compression='gzip', on_bad_lines='warn'
-                    )
+      for month in range(1, 13):
+        year_month = f'{year}-{month:02d}'
+        # Construct file path for both plain CSV and gzipped CSV
+        f_path = dir_path / str(year) / f'{year}-{month:02d}.csv'
+        f_path_gz = dir_path / str(year) / f'{year}-{month:02d}.csv.gz'
+           
+        # Check and yield CSV file
+        if f_path.exists():
+          print(f'Extracting: {f_path}')
+          df = pd.read_csv(f_path, usecols=extract_cols, on_bad_lines='warn')
+          yield year_month, df
+
+        elif f_path_gz.exists():
+          print(f'Extracting: {f_path_gz}')
+          df = pd.read_csv(f_path_gz, usecols=extract_cols, compression='gzip', on_bad_lines='warn')
+          yield year_month, df
+
             # Print error message if file not found
-            else:
-                print(f'File not found: {f_path}')
-                print(f'File not found: {f_path_gz}')
-                yield None
+        else:
+          print(f'File not found: {f_path}')
+          print(f'File not found: {f_path_gz}')
+          yield year_month, None
