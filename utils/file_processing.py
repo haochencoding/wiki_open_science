@@ -12,8 +12,10 @@ def compress_csv(file_path):
     Returns:
         - None. It writes the compressed file to the disk.
     """
-    with open(file_path, 'rb') as f_in, gzip.open(f'{file_path}.gz', 'wb') as f_out:
-        shutil.copyfileobj(f_in, f_out)
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as f_in, gzip.open(f'{file_path}.gz', 'wb') as f_out:
+            shutil.copyfileobj(f_in, f_out)
+        print(f'{file_path} compressed into gzip file.')
 
 
 def prevent_file_overwirte(file_path):
