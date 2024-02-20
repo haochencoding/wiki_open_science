@@ -35,44 +35,46 @@
     - n_admin_user_unblock: number of administrators who log the request using wiki account
 
 `block_monthly_queries_metrics.csv`
-For the monthly number of block queries, including (re-)block and unblock
-- For total number of queries:
-    - n_queries_all
-    - n_queries_all_block
-    - n_queries_all_unblock
-- For queries done to different types of editors
-    - All queries
+- For the monthly number of **(re-)block and unblock** queries
+    - For total number of queries:
+        - n_queries_all
+    - For queries done to different types of editors
         - n_queries_editor_ip
         - n_queries_editor_bot
         - n_queries_editor_user
-    - Blocking & Reblocking queries
-        - n_queries_editor_ip_block
-        - n_queries_editor_bot_block
-        - n_queries_editor_user_block
-    - Unblocking queries
-        - n_queries_editor_ip_unblock
-        - n_queries_editor_bot_unblock
-        - n_queries_editor_user_unblock
-- For queries requested by different types of administrators
-    - All queries
+    - For queries requested by different types of administrators
         - n_queries_admin_ip
         - n_queries_admin_bot
         - n_queries_admin_user
-    - Blocking & Reblocking queries
+    - For queries that apply to the whole site and only specific pages
+        - n_queries_global
+        - n_queries_pagespecific
+- For the monthly number of **(re-)block** queries
+    - For total number of queries:
+        - n_queries_all_block
+    - For queries done to different types of editors
+        - n_queries_editor_ip_block
+        - n_queries_editor_bot_block
+        - n_queries_editor_user_block
+    - For queries requested by different types of administrators
         - n_queries_admin_ip_block
         - n_queries_admin_bot_block
         - n_queries_admin_user_block
-    - Unblocking queries
+    - For queries that apply to the whole site and only specific pages
+        - n_queries_global_block
+        - n_queries_pagespecific_block
+- For the monthly number of **unblock** queries
+    - For total number of queries:
+        - n_queries_all_unblock
+    - For queries done to different types of editors
+        - n_queries_editor_ip_unblock
+        - n_queries_editor_bot_unblock
+        - n_queries_editor_user_unblock
+    - For queries requested by different types of administrators
         - n_queries_admin_ip_unblock
         - n_queries_admin_bot_unblock
         - n_queries_admin_user_unblock
-- For queries that apply to the whole site and only specific pages
-    - All queries
-        - n_queries_global
-        - n_queries_pagespecific
-    - Blocking & Reblocking queries
-        - n_queries_global_block
-        - n_queries_pagespecific_block
-    - Unblocking queries
+    - For queries that apply to the whole site and only specific pages
         - n_queries_global_unblock
         - n_queries_pagespecific_unblock
+        
