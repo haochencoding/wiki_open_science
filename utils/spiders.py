@@ -115,6 +115,10 @@ def retrieve_block_logs_month(year, month, folder_path, compress=False):
 
     # Set the path of a local csv to store data
     file_path = folder_path + f'{year}-{month:02d}.csv'
+   
+    # Ensure the directory exists. If not, create the directory
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path, exist_ok=True)
 
     # Check if a file already exists
     if os.path.exists(file_path):
