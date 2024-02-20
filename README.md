@@ -60,7 +60,7 @@ For the monthly number of block queries, including (re-)block and unblock
     - n_queries_admin_ip_unblock
     - n_queries_admin_bot_unblock
     - n_queries_admin_user_unblock
-For queries that apply to the whole site and only specific pages
+- For queries that apply to the whole site and only specific pages
     - n_queries_global
     - n_queries_pagespecific
     - n_queries_global_block
