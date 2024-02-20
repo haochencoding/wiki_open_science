@@ -46,7 +46,7 @@
         - n_queries_admin_ip
         - n_queries_admin_bot
         - n_queries_admin_user
-    - Queries that apply to the whole site and only specific pages
+    - Queries that apply to the whole site and only specific pages **Warning: this metric might not be correct**
         - n_queries_global
         - n_queries_pagespecific
 - For the monthly number of **(re-)block** queries
@@ -60,7 +60,7 @@
         - n_queries_admin_ip_block
         - n_queries_admin_bot_block
         - n_queries_admin_user_block
-    - Queries that apply to the whole site and only specific pages
+    - Queries that apply to the whole site and only specific pages **Warning: this metric might not be correct**
         - n_queries_global_block
         - n_queries_pagespecific_block
 - For the monthly number of **unblock** queries
@@ -74,7 +74,7 @@
         - n_queries_admin_ip_unblock
         - n_queries_admin_bot_unblock
         - n_queries_admin_user_unblock
-    - Queries that apply to the whole site and only specific pages
+    - Queries that apply to the whole site and only specific pages **Warning: this metric might not be correct**
         - n_queries_global_unblock
         - n_queries_pagespecific_unblock
         
