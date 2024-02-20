@@ -154,8 +154,9 @@ def retrieve_block_logs_month(year, month, folder_path, compress=False):
             print(f'{total_logs} records retrieved.')
             break
 
-    if compress:
+    if compress & os.path.exists(file_path):
         compress_csv(file_path)
+        print(f'{file_path} compressed into gzip file.')
 
 
 def retrieve_block_logs_year(year, folder_path, compress=False):
