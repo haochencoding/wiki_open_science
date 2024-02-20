@@ -18,6 +18,7 @@ def file_iterator(dir_path, start_year, end_year, extract_cols):
     - usecols (list of str): Columns to read into the DataFrame from the CSV files.
 
     Yields:
+    - year_month: a string specifying the year and month of the data
     - pandas.DataFrame or None: A DataFrame constructed from the found CSV file
       for each month of each year in the range, or None if the file does not exist.
 
