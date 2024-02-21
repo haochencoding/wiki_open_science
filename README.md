@@ -1,6 +1,10 @@
 # Dictionaries for Processed Data
 
+GitHub link for all data of these metrics: https://github.com/haochencoding/wiki_open_science/tree/main/data/processed_data
+
 ## Blocking metrics
+The blocking metrics is calculated by processing block log events data, retrieved from English Wikipedia API. All metrics are calculated for a specific month of a specific year. Data available from December 2004 to June 2023 (will update to December 2023).
+
 
 ### block_monthly_editor_metrics.csv
 | Metric | Description |
@@ -71,12 +75,46 @@ These metrics count the number of blocking logs per month.
 | | `n_log_admin_user_unblock` | Unblock logs requested by user administrators |
 
 
-## Page abuse metrics
+## Edit abuse metrics
+The edit abuse metrics are calulated by processing abuse log data and abusefilter log data, retrieved from English Wikipedia API. Data available from March 2009 to June 2023 (will be updated to December 2023).
+
+For more deteils, see: https://en.wikipedia.org/wiki/Wikipedia:Edit_filter
+
+### Terminologies 
+**Abusefilter** 
+- The abusefilter is the filter on Wikipedia that automatically detect abnormal editing behaviours. It helps to monitor and intervene vandalism/abuse on the pages.
+- Each modification and creation of abuse filters will be logged in the abusefilter log, stored in the back end.
+
+**Abuse Logs**
+- Once abnormal editing behaviours are detected, they will trigger certain automatical responses and be logged into the abuse log.
+
+**Abusefilter Effects**
+There are 4 types of effects of abusefilters.
+- **Disallow**: The strongest setting is disallow. In this case, the edit is rejected, and the user will see a customizable message (this one by default). A link is provided for reporting false positives. It is also possible to have a user's autoconfirmed status revoked if a user trips the filter.
+- **Warn:** The next lowest setting is to warn. In this case, the user will see a customisable message (this one by default) that the edit may be problematic. The user then has the option to either proceed with the save, or abandon the edit.
+- **Tag:*** The next lowest setting is to add a tag. In this case, the edit is tagged for review by patrollers.
+- **Log**: The lowest setting is to log the edit. In this case, the edit is merely added to the abuse log. When testing new filters, this is the suggested setting to use.
 
 ### abusefilter_monthly_metrics.csv
-The abusefilter is the filter on Wikipedia that automatically detect abnormal editing behaviours. It helps to monitor and intervene vandalism/abuse on the pages.
-- n_af_all: number of all abusefilter-related logs
-- n_af_create: number of abusefilter creation logs
-- n_af_modify: number of abusefilter modify logs
-- n_af_hit: number abusefilter hit logs (**warning**: the value of this variable is all 0)
-- note: n_af_all = n_af_create + n_af_modify
+| Metric | Description |
+|--------|-------------|
+| `n_af_all` | Number of all abusefilter-related logs |
+| `n_af_create` | Number of abusefilter creation logs |
+| `n_af_modify` | Number of abusefilter modify logs |
+| `n_af_hit` | Number of abusefilter hit logs |
+**Notes**:
+ - the values of 'n_af_hit' is all 0
+ - `n_af_all` = `n_af_create` + `n_af_modify`
+
+ ### abusefiltered_edits_monthly_metrics.csv
+|  Metric | Description |
+|----------|-------------|
+| `n_afedit_result_all` | Total number of edits filtered by abusefilter|
+| `n_afedit_result_disallow` | Number of edits labelled as disallow |
+| `n_afedit_result_warn` | Number of edits labelled as warn |
+| `n_afedit_result_tag` | Number of edits labelled as tag |
+| `n_afedit_result_other` | Number of edits labelled as other actions by the abuse filter |
+| `n_afedit_editor_all` | Total number of editors affected by the abuse filter |
+| `n_afedit_editor_ip` | Number of anonymous editors (IP addresses) affected by the abuse filter edits |
+| `n_afedit_editor_bot` | Number of bot editors affected by the abuse filter edits |
+| `n_afedit_editor_account` | Number of registered editors affected by the abuse filter edits |
