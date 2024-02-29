@@ -1,6 +1,5 @@
 # Dictionaries for Processed Data
-
-GitHub link for all data of these metrics: https://github.com/haochencoding/wiki_open_science/tree/main/data/processed_data
+This is the introduction to the metrics generated based on the data scraped from English Wikipedia API. The GitHub link for all data of these metrics: https://github.com/haochencoding/wiki_open_science/tree/main/data/processed_data
 
 ## Blocking metrics
 The blocking metrics is calculated by processing block log events data, retrieved from English Wikipedia API. All metrics are calculated for a specific month of a specific year. Data available from December 2004 to June 2023 (will update to December 2023).
