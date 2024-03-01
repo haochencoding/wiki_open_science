@@ -52,6 +52,8 @@ wikipedia_open_science/
 │   │
 │   ├── analyze_blocklog_PartB_visualization.ipynb  # Code for Data visualisation
 │   │
+│   ├── analyze_blocklog_PartC_correlation.ipynb  # Code for Correlation analysis
+│   │
 │   ├── calculate_block_log_metrics.ipynb   # Code for metrics calculation for block logs
 │   │
 │   ├── fetch_block_log_data.ipynb   # Code for block log retrieval from Wikipedia API
